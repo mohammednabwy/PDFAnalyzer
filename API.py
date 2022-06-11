@@ -7,7 +7,7 @@ from flasgger import Swagger,LazyJSONEncoder
 import fitz
 import json
 import shutil
-import requests
+#import requests
 #--------------------Public Variables----------------------------
 UPLOAD_FOLDER = 'UploadFiles/'
 #UPLOAD_FOLDER_LOs=UPLOAD_FOLDER + 'LOs/'
