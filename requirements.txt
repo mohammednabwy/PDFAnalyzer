@@ -1,5 +1,4 @@
 flask==1.1.2
 flasgger==0.9.5
-PyYAML==3.12
 PyMuPDF
 pdf2docx
