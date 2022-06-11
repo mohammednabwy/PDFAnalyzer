@@ -1,6 +1,7 @@
 #----------------------Libraries--------------------------------
 import os
 from flask import Flask, request, jsonify,send_file
+from flask import send_from_directory
 from werkzeug.utils import secure_filename
 from flasgger.utils import swag_from
 from flasgger import Swagger,LazyJSONEncoder
@@ -16,9 +17,20 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 APP = Flask(__name__)
 #----------------------------------------------------------------
+
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+#----------------------------------------------------------------          
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/favicon.png')
+
+@app.route('/')
+@app.route('/home')
+def home():
+    return "Welcome to PDF Analyzer"        
 #------------------------Swagger----------------------------------
 def initSwaggerUI(app):
     app.config["SWAGGER"] = {"title": "Swagger-UI", "uiversion": 3 ,"description": "DocumnetsMLOsExtraction v1.1 API"}
@@ -122,5 +134,8 @@ def convertScannedPDFToWord(pdf_file_path,out_docx_file_path) :
 #--------------------------------------------------------
 if __name__ == '__main__':
     swagger=initSwaggerUI(app)
-    app.run(host='127.0.0.1', port=5000)   
+    #app.run(host='127.0.0.1', port=5000)  
+    #app.secret_key = 'ItIsASecret'
+    app.debug = True
+    app.run()
 #--------------------------------------------------------  
