@@ -18,4 +18,4 @@ wrapt==1.12.1
 flasgger==0.9.5
 PyMuPDF
 pdf2docx
-opencv-python-headless==4.2.0.32
+opencv-python-headless==4.6.0.66
