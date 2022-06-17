@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "712f31f3-5519-48c2-9aa2-33881f435557",
+		"name": "PDF2WordConversion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PDF2Word",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/Work/Projects/E-Learning Projects/DocumnetsAnalysis/samples/scanned pdf/sample2.doc"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pdf2wordconversion.herokuapp.com/api/v1/ConvertToWord",
+					"protocol": "https",
+					"host": [
+						"pdf2wordconversion",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ConvertToWord"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
